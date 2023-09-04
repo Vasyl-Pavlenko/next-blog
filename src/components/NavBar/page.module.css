@@ -1,0 +1,131 @@
+.container {
+  max-height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.logo {
+  flex: 1;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.link {
+  font-weight: 500;
+  transition: 0.5s;
+}
+
+.link:hover {
+  transform: scale(1.1);
+}
+
+.active {
+  font-weight: bold;
+  transform: scale(1.2);
+}
+
+.logout {
+  padding: 5px;
+  border: none;
+  background-color: #ff3208;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+
+.logout:hover {
+  transform: scale(1.1);
+}
+
+.small {
+  display: none;
+}
+
+.small__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  transition: transform 1s ease;
+  flex-direction: column;
+  z-index: 5;
+}
+
+.small__overlay .overlay__close {
+  font-size: 27px;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.small__links {
+  margin: 2rem;
+  cursor: pointer;
+  font-size: 18px;
+  text-align: center;
+  animation: slide-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.flex__center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide-bottom {
+  -webkit-animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes slide-bottom {
+  0% {
+    -webkit-transform: translateY(-25%);
+    transform: translateY(-25%);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-bottom {
+  0% {
+    -webkit-transform: translateY(-25%);
+    transform: translateY(-25%);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    max-height: 50px;
+  }
+
+  .links {
+    display: none;
+  }
+
+  .small {
+    display: flex;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+}

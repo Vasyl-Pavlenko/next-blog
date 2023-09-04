@@ -1,0 +1,107 @@
+.container {
+  display: flex;
+  gap: 40px;
+  padding-bottom: 20px;
+}
+
+.posts {
+  flex: 1;
+  max-width: 50%;
+}
+
+.post {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.postTitle {
+  font-size: 20px;
+  overflow: hidden;
+}
+
+.imgContainer {
+  width: 200px;
+  height: 200px;
+}
+
+.img {
+  object-fit: cover;
+  border-radius: 25px;
+}
+
+.delete {
+  cursor: pointer;
+  color: rgb(253, 30, 30);
+  font-weight: bold;
+}
+
+.new {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input,
+.textArea {
+  padding: 10px;
+  background-color: transparent;
+  border: 2px solid #bbb;
+  border-radius: 3px;
+  color: #bbb;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: Inter, sans-serif;
+  border-radius: 10px;
+  resize: none;
+}
+
+.button {
+  padding: 20px;
+  cursor: pointer;
+  background-color: #53c28b;
+  border: none;
+  border-radius: 5px;
+  color: #eee;
+  font-weight: bold;
+  transition: 0.5s;
+}
+
+.button:hover {
+  border-radius: 25px;
+}
+
+@media screen and (max-width: 925px) {
+  .container {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .post {
+    flex-direction: column;
+  }
+
+  .postTitle {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .delete {
+    font-size: 16px;
+  }
+}
