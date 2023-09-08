@@ -27,7 +27,6 @@ export default function Home() {
           src={Hero}
           alt="main photo"
           className={styles.img}
-          placeholder="blur"
         />
       </div>
     </main>

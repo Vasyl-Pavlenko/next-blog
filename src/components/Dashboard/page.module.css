@@ -39,6 +39,18 @@
   font-weight: bold;
 }
 
+.error {
+  background-color: #ff6961;
+  color: #fff;
+  padding: 10px;
+  border: 1px solid #ff0000;
+  border-radius: 4px;
+  margin: 0 auto 15px;
+  font-weight: bold;
+  max-width: 300px;
+  text-align: center;
+}
+
 .new {
   flex: 1;
   display: flex;
@@ -79,6 +91,10 @@
   .container {
     flex-direction: column;
     gap: 20px;
+  }
+
+  .posts {
+    max-width: 100%;
   }
 }
 

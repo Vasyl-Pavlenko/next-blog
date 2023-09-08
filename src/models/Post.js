@@ -6,23 +6,23 @@ const postSchema = new Schema(
   {
     title: {
       type: String,
-      required: true,
+      required: [true, 'Title is required'],
     },
     desc: {
       type: String,
-      required: true,
+      required: [true, 'Description is required'],
     },
     img: {
       type: String,
-      required: true,
+      required: [true, 'Image is required'],
     },
     content: {
       type: String,
-      required: true,
+      required: [true, 'Content is required'],
     },
     username: {
       type: String,
-      required: true,
+      required: [true, 'Username is required'],
     },
   },
   { timestamps: true }

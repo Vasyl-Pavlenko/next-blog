@@ -6,17 +6,17 @@ const userSchema = new Schema(
   {
     name: {
       type: String,
-      unique: true,
-      required: true,
+      unique: [true, 'Name already exists!'],
+      required: [true, 'Name is required'],
     },
     email: {
       type: String,
-      unique: true,
-      required: true,
+      unique: [true, 'Email already exists!'],
+      required: [true, 'Email is required'],
     },
     password: {
       type: String,
-      required: true,
+      required: [true, 'Password is required'],
     },
   },
   { timestamps: true }

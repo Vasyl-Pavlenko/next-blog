@@ -1,41 +1,46 @@
-"use client"
+'use client'
 
-import { useEffect, useState } from "react";
+import Loader from "@/components/Loader/Loader";
 import styles from "./page.module.css";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
-async function getData(id) {
-  try {
-    const res = await fetch(`/api/posts/${id}`, {
-      revalidate: 10,
+function fetchData(id) {
+  return fetch(`/api/posts/${id}`, {
+    cache: 'no-cache',
+  })
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error("Failed to fetch data");
+      }
+      return res.json();
+    })
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+      throw error;
     });
-
-    if (!res.ok) {
-      throw new Error("Failed to fetch data");
-    }
-
-    return res.json();
-  } catch (error) {
-    console.error("Error fetching data:", error);
-    throw error;
-  }
 }
 
-const BlogId = async ({ params }) => {
-  const [data, setData] = useState([]);
+export default function BlogId({ params }) {
+  const [data, setData] = useState(null);
 
   useEffect(() => {
-    async function fetchDataAsync() {
-      try {
-        const result = await getData(params.id);
-        setData(result);
-      } catch (error) {
-        console.log(error);
-      } 
-    }
+    fetchData(params.id)
+      .then((result) => {
+        setData(result)
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error)
+      })
+  }, [params]);
 
-    fetchDataAsync();
-  }, []);
+  if (!data) {
+    return (
+      <div>
+        <Loader />
+      </div>
+    )
+  }
 
   return (
     <div className={styles.container}>
@@ -56,7 +61,6 @@ const BlogId = async ({ params }) => {
               width={50}
               height={50}
               className={styles.avatar}
-              placeholder="blur"
             />
             <span className={styles.username}>
               {data.username}
@@ -71,7 +75,6 @@ const BlogId = async ({ params }) => {
             width={390}
             height={300}
             className={styles.image}
-            placeholder="blur"
           />
         </div>
       </div>
@@ -83,6 +86,4 @@ const BlogId = async ({ params }) => {
       </div>
     </div>
   );
-};
-
-export default BlogId;
+}

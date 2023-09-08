@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from 'next/navigation';
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { ThemeContext } from "@/context/ThemeContext";
 import styles from "./page.module.css";
 import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";

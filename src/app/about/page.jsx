@@ -15,7 +15,6 @@ const About = () => {
           fill={true}
           alt="about us"
           className={styles.img}
-          placeholder="blur"
         />
         <div className={styles.imgText}>
           <h1 className={styles.imgTitle}>

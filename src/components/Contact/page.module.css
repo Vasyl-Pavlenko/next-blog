@@ -21,6 +21,18 @@
   animation: move 3s infinite ease alternate;
 }
 
+.error {
+  background-color: #ff6961;
+  color: #fff;
+  padding: 10px;
+  border: 1px solid #ff0000;
+  border-radius: 4px;
+  margin: 0 auto 15px;
+  font-weight: bold;
+  max-width: 300px;
+  text-align: center;
+}
+
 @keyframes move {
   from {
     transform: translateY(-15px);
@@ -55,6 +67,17 @@
 .textArea::placeholder {
   font-family: Inter, sans-serif;
   font-size: 20px;
+}
+
+.button {
+  padding: 20px;
+  cursor: pointer;
+  background-color: #53c28b;
+  border: none;
+  border-radius: 5px;
+  color: #eee;
+  font-weight: bold;
+  transition: 0.5s;
 }
 
 .loader {

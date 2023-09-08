@@ -31,7 +31,6 @@ const Category = ({ params }) => {
               height={400}
               src={image}
               alt={title}
-              placeholder="blur"
             />
           </div>
 
